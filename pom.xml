@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>grace-component</artifactId>
+    <groupId>com.eric.grace</groupId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <modules>
+        <!--<module>grace-component-sso-api</module>-->
+        <module>grace-component-utils</module>
+        <!--<module>grace-component-common</module>-->
+        <module>grace-component-mongodb</module>
+        <!--<module>grace-component-redis</module>-->
+        <!--<module>grace-component-cache</module>-->
+        <!--<module>grace-component-application</module>-->
+        <!--<module>grace-component-notify</module>-->
+        <!--<module>grace-component-base</module>-->
+
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.0.RELEASE</version>
+    </parent>
+
+    <properties>
+        <!--spring cloud 版本-->
+        <spring.cloud.version>Dalston.RELEASE</spring.cloud.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <!-- log4j日志文件管理包版本 -->
+        <slf4j.version>1.7.9</slf4j.version>
+
+        <spring-data-redis.version>1.8.7.RELEASE</spring-data-redis.version>
+        <redisson.version>3.5.0</redisson.version>
+        <jedis.version>2.9.0</jedis.version>
+
+
+        <!--mysql 数据库 数据源-->
+        <mysql-verison>5.1.38</mysql-verison>
+        <com.alibaba.druid.version>1.0.29</com.alibaba.druid.version>
+        <!--json-->
+        <fastjson.version>1.2.39</fastjson.version>
+        <org.apache.commons.lang3.version>3.5</org.apache.commons.lang3.version>
+        <commons-lang.version>2.6</commons-lang.version>
+        <commons-io.version>2.5</commons-io.version>
+        <!-- jwt-->
+        <jjwt.version>0.9.0</jjwt.version>
+        <!-- 配置属性加密 -->
+        <jasypt.version>1.16</jasypt.version>
+        <!-- grace 工具类 -->
+        <grace-component-utils.version>1.0.0</grace-component-utils.version>
+        <grace-framework-service.version>2.2.0</grace-framework-service.version>
+        <!--okhttp3-->
+        <okhttp.version>3.9.0</okhttp.version>
+        <!--swagger-->
+        <io.springfox.swagger.version>2.7.0</io.springfox.swagger.version>
+        <!-- hibernate 验证 -->
+        <org.hibernate.validate.version>5.4.1.Final</org.hibernate.validate.version>
+
+
+    </properties>
+
+
+    <dependencies>
+
+
+        <!--日志文件管理包-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!--测试依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>utf-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+
+</project>
