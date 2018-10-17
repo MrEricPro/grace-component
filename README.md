@@ -1,4 +1,3 @@
-# grace-component
 # grace-component 
 grace-component-base：其中包括：服务结果消息封装；异常处理封装：参数异常、服务器异常、未认证异常、用户异常等；分页组件封装等。  
 grace-component-binder-rocket、particle-component-rocketmq：针对于rocket mq消息中间件的封装。  
